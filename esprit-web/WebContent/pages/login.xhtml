@@ -6,18 +6,18 @@
 
 	<ui:define name="pageTitle">LOG IN</ui:define>
 	<ui:define name="pageContent">
-		<h:form>
-			<h:commandLink action="nav-to-welcome" value="welcome" />
 
-		</h:form>
 		<h2>Log In</h2>
-		<h:form>
+		<h:form id="login_form">
 			<h:panelGrid columns="2">
 				<h:outputText value="login" />
 				<h:inputText value="#{authbean.user.login}" />
 				<h:outputText value="password" />
 				<h:inputSecret value="#{authbean.user.password}" />
-				<h:commandButton value="log in" action="#{authbean.login}" />
+				<h:commandButton id="login_submit" value="log in"
+					action="#{authbean.login}" />
+
+				<h:message for="login_submit" styleClass="error" />
 			</h:panelGrid>
 
 		</h:form>
