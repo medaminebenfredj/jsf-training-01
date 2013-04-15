@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
-	<title>login page</title>
-</h:head>
-<h:body>
-	<h:form>
-		<h:commandLink action="nav-to-welcome" value="welcome" />
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
 
-	</h:form>
-	<h2>Log In</h2>
-	<h:form>
-		<h:panelGrid columns="2">
-			<h:outputText value="login" />
-			<h:inputText value="#{authbean.user.login}" />
-			<h:outputText value="password" />
-			<h:inputSecret value="#{authbean.user.password}" />
-			<h:commandButton value="log in" action="#{authbean.login}" />
-		</h:panelGrid>
+	<ui:define name="pageTitle">LOG IN</ui:define>
+	<ui:define name="pageContent">
+		<h:form>
+			<h:commandLink action="nav-to-welcome" value="welcome" />
 
-	</h:form>
+		</h:form>
+		<h2>Log In</h2>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="login" />
+				<h:inputText value="#{authbean.user.login}" />
+				<h:outputText value="password" />
+				<h:inputSecret value="#{authbean.user.password}" />
+				<h:commandButton value="log in" action="#{authbean.login}" />
+			</h:panelGrid>
 
-</h:body>
-</html>
+		</h:form>
+
+
+
+	</ui:define>
+</ui:composition>
